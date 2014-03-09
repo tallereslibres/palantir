@@ -13,8 +13,8 @@ from pytz import timezone
 import numpy as np
 from twisted.internet import reactor
 from autobahn.websocket import WebSocketServerFactory, \
-                               WebSocketServerProtocol, \
-                               listenWS
+        WebSocketServerProtocol, \
+        listenWS
 import settings.py
 import logger.py
 
@@ -40,8 +40,8 @@ class ServerProtocol(WebSocketServerProtocol):
       print("WebSocket connection closed: {}".format(reason))
  
 if __name__ == '__main__':
-    factory = WebSocketServerFactory("ws:"+)
-    factory.protocol = EchoServerProtocol
+    factory = WebSocketServerFactory("ws:"+API_URL)
+    factory.protocol = ServerProtocol
     listenWS(factory)
     reactor.run()
   
